@@ -12,6 +12,8 @@ class TestDuanXin:
     def teardown(self):
         time.sleep(3)
         self.driver.quit()
+
+    @pytest.allure.severity(pytest.allure.severity_level.BLOCKER)
     @pytest.mark.parametrize(("phone","contect"),[("18888888888","hello"),("13333333333","abc")])
     def test_duanxin(self,phone,contect):
         self.page.duanxinpage.click_duanxin_btn()
